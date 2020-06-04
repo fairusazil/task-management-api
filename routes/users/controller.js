@@ -12,7 +12,7 @@ module.exports = {
     },
     create: async (req, res) => {
         try {
-            const { username, email, password } = req.body;
+            const { username, email, password, role } = req.body;
 
             const result = await User.findOne({ email: email });
             if (result) return res.status(401).send('Your email has already registered')
@@ -21,6 +21,7 @@ module.exports = {
                 username,
                 email,
                 password,
+                role,
             })
 
             res.status(201).json({
