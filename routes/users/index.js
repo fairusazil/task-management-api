@@ -5,6 +5,6 @@ const { getAll, create, login } = require('./controller');
 
 router.get('/', getAll);
 router.post('/', create);
-router.post('/login', login);
+router.post('/signin', login);
 
 module.exports = router;
